@@ -1,9 +1,9 @@
-
+import HomeContainer from "../container/Home";
 
 export default function Home() {
   return (
-    <div >
-      this is naija
+    <div>
+      <HomeContainer />
     </div>
-  )
+  );
 }
