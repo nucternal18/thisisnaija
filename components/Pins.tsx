@@ -1,4 +1,4 @@
-function Pins() {
+function Pins({user}) {
     return (
         <div>
             Pins
