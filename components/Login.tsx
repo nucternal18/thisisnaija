@@ -17,7 +17,7 @@ function Login() {
             image: imageUrl,
         }
         client.createIfNotExists(doc).then(() => {
-            router.push("/");
+            router.push("/pins");
         })
     }
   return (
