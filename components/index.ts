@@ -7,6 +7,7 @@ import CreatePin from './CreatePin';
 import Search from './Search';
 import MasonryLayout from './MasonryLayout';
 import Spinner from './Spinner';
+import Pin from './Pin';
 
 export {
   Login,
@@ -18,4 +19,5 @@ export {
   Search,
   MasonryLayout,
   Spinner,
+  Pin
 };

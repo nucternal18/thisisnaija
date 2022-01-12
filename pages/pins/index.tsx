@@ -7,6 +7,7 @@ import { client } from "../../lib/client";
 import { userQuery } from "../../utils/data";
 
 import { User } from "../../lib/types";
+import { fetchUser } from "../../lib/fetchUser";
 
 
 function Pins() {
@@ -15,10 +16,7 @@ function Pins() {
 
 
   useEffect(() => {
-    const userInfo =
-      typeof window !== "undefined"
-        ? JSON.parse(localStorage.getItem("user"))
-        : localStorage.clear();
+    const userInfo = fetchUser();
     const query = userQuery(userInfo?.googleId);
     client.fetch(query).then((data) => {
       setUser(data[0]);

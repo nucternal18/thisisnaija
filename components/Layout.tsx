@@ -21,7 +21,7 @@ interface Layout {
 export default function Layout({ children, user, searchTerm, setSearchTerm }: Layout) {
   const router = useRouter();
   const [toggleSidebar, setToggleSidebar] = useState<boolean>(false);
-
+    
   const scrollRef = useRef(null);
 
   useEffect(() => {

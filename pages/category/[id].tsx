@@ -1,8 +1,10 @@
+import Layout from "../../components/Layout"
+
 function Category() {
     return (
-        <div>
+        <Layout>
             
-        </div>
+        </Layout>
     )
 }
 
