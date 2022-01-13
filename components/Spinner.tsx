@@ -1,5 +1,5 @@
 
-const Spinner = ({message}: {message: string}) => {
+const Spinner = ({message}: {message?: string}) => {
     return (
       <div className="flex flex-col justify-center items-center w-full h-full">
         <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-[#00BFFF] m-5 p-4">

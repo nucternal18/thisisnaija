@@ -48,7 +48,7 @@ function Sidebar({user, closeToggle}: SidebarProps) {
             </a>
           </Link>
           <div className="flex flex-col gap-5">
-            <ActiveLink href={"/"} onClick={handleCloseSidebar}>
+            <ActiveLink href={"/pins"} onClick={handleCloseSidebar}>
               <RiHomeFill /> Home
             </ActiveLink>
             <h3 className="mt-2 px-5 text-base 2xl:text-xl">
@@ -57,7 +57,7 @@ function Sidebar({user, closeToggle}: SidebarProps) {
             </h3>
             {categories.slice(0, categories.length - 1).map((category) => (
               <ActiveLink
-                href={`/category/${category.name}`}
+                href={`/pins/category/${category.name}`}
                 onClick={handleCloseSidebar}
                 key={category.name}
               >

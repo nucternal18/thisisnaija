@@ -35,7 +35,7 @@ const Navbar = ({
                   <img src={user.image} alt="user" className="w-14 h-12 rounded-lg" />
               </a>
           </Link>
-          <Link href={`/pin/create-pin}`}>
+          <Link href={`/pins/createpin`}>
               <a className="bg-black text-white rounded-lg w-12 h-12 md:w-14 md:h-14 flex justify-center items-center">
                   <IoMdAdd/>
               </a>
