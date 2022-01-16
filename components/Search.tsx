@@ -1,7 +1,8 @@
-const Search = () => {
+import { MasonryLayout } from "."
+const Search = ({pins}) => {
     return (
         <div>
-            Search
+            <MasonryLayout pins={pins} />
         </div>
     )
 }

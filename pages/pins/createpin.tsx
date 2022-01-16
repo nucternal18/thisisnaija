@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import { client } from "../../lib/client";
-import { categories, userQuery } from "../../utils/data";
 import { CreatePin } from "../../components";
 import Layout from "../../components/Layout";
-import { fetchUser } from "../../lib/fetchUser";
+import { useFetchUser } from "../../lib/useFetchUser";
 
 function createPin() {
   const router = useRouter();
-  const [user, setUser] = useState(null);
   const [title, setTitle] = useState<string>("");
   const [about, setAbout] = useState<string>("");
   const [destination, setDestination] = useState<string>("");
@@ -19,13 +17,7 @@ function createPin() {
   const [imageAsset, setImageAsset] = useState(null);
   const [wrongImageType, setWrongImageType] = useState<boolean>(false);
 
-  useEffect(() => {
-    const userInfo = fetchUser();
-    const query = userQuery(userInfo?.googleId);
-    client.fetch(query).then((data) => {
-      setUser(data[0]);
-    });
-  }, []);
+  const { user } = useFetchUser();
 
   const uploadImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { type, name } = e.target.files[0];

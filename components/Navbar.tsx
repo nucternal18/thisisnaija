@@ -25,7 +25,7 @@ const Navbar = ({
           onChange={(e) => setSearchTerm(e.target.value)}
           placeholder="Search"
           value={searchTerm}
-          onFocus={() => router.replace("/pin/search")}
+          onFocus={() => router.replace("/pins/search")}
           className="p-2 w-full bg-white outline-none"
         />
       </div>

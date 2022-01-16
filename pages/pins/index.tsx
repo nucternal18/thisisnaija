@@ -1,30 +1,21 @@
-import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
-import { Feed, CreatePin, Search } from "../../components";
-
-import { client } from "../../lib/client";
-import { userQuery } from "../../utils/data";
+import { Feed } from "../../components";
 
 import { User } from "../../lib/types";
-import { fetchUser } from "../../lib/fetchUser";
-
+import { useFetchUser } from "../../lib/useFetchUser";
 
 function Pins() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [user, setUser] = useState(null);
+  const router = useRouter();
 
+  const { user } = useFetchUser();
 
-  useEffect(() => {
-    const userInfo = fetchUser();
-    const query = userQuery(userInfo?.googleId);
-    client.fetch(query).then((data) => {
-      setUser(data[0]);
-    });
-  }, []);
+  // if(!user) {
+  //   router.push("/");
+  // }
 
   return (
-    <Layout user={user} searchTerm={searchTerm} setSearchTerm={setSearchTerm}>
+    <Layout user={user}>
       <Feed />
     </Layout>
   );

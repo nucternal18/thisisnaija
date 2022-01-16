@@ -6,15 +6,14 @@ import { MdDownloadForOffline } from "react-icons/md";
 import { AiTwotoneDelete } from "react-icons/ai";
 import { BsFillArrowUpRightCircleFill } from "react-icons/bs";
 import { urlFor, client } from "../lib/client";
-import { CloseButton } from "react-toastify/dist/components";
-import { fetchUser } from "../lib/fetchUser";
+import { useFetchUser } from "../lib/useFetchUser";
 
 const Pin = ({ pin }) => {
   const { postedBy, image, _id, destination, save } = pin;
   const router = useRouter();
   const [pinHovered, setPinHovered] = useState(false);
 
-  const user = fetchUser();
+  const {userInfo: user} = useFetchUser();
   const alreadySaved: boolean = !!save?.filter(
     (item) => item.postedBy._id === user.googleId
   )?.length;
